@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" cont  ent="text/html; charset=iso-8859-1" />
+  <title>CUY jvs tri selection</title>
+</head>
+
+<body>
+  <p>Combien d'éléments votre tableau doit-il avoir ? <br />
+  <input id="nbr" value=""> </input><button id="creer" type="button" onclick="creer_tab()">Créer le tableau</button>
+  <div>Voici le tableau des n éléments: <br />
+  <span id="affich">&nbsp;</span></div>
+
+<h1>Tri par sélection</h1>
+  <div><button id="tri_select" type="button" onclick="trier_select()">Triez</button></div>
+  <div><b>Nombre total de permutations réalisées : </b><br />
+  <span id="nbr_permut_select">&nbsp;</span><br />
+  <b>Détail des étapes :</b><br />
+  <span id="etap_select">&nbsp;</span><br />
+  <b>Durée du tri selection :</b><br />
+  <span id="duree_tri_select">&nbsp;</span> ms
+  <p>
+
+<script type="text/javascript">
+  var aArr = [];
+  var aCop = [];
+  function creer_tab() {
+    nbre = document.getElementById("nbr").value;
+    aArr = [];
+    for (i=0;i<nbre;i++) {
+      it = Math.floor(Math.random()*nbre*1.1); 
+      aArr.push(it);
+    }
+    document.getElementById("affich").innerHTML = aArr.join(" ; ");
+  }
+
+  function trier_select() {
+    nudepart = (new Date()).getTime();
+    var nbre_permut_select=0;
+    var longu = aArr.length;
+    var temp;
+    for (var i=0;i<longu;i++){
+      aCop[i]=aArr[i];
+      //pour conserver le tableau aArr et travailer sur sa copie aCop
+    }
+
+    for (i=0;i<(longu-1);i++) {
+      indic_min = i;
+      for (j=i+1;j<longu;j++) {
+        //parmi les suivants non triés
+        if (aCop[j] < aCop[indic_min]) {
+        //s'il y en a un plus petit, il devient le nouveau minimum
+          indic_min = j;
+        }
+      }
+      if (indic_min != i) {
+      //si le plus petit n'est pas le premier, je les permute
+        temp = aCop[i];
+        aCop[i] = aCop[indic_min];
+        aCop[indic_min] = temp;
+        nbre_permut_select++;
+      }
+      document.getElementById("etap_select").innerHTML += i + " == " + aCop.join(" ; ") + "<BR>";
+      document.getElementById("nbr_permut_select").innerHTML = nbre_permut_select;
+    }
+    nufin = (new Date()).getTime();
+    document.getElementById("duree_tri_select").innerHTML = nufin - nudepart;
+  }
+
+</script>
+</body>
+</html>
