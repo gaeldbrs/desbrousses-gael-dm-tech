@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>desbrousses-gael-dm-tech</title>
-</head>
-<body>
+function inversement(caractere) {
 
-	<div>
-		
-		<h1>Inverser chaine de caractere</h1>
-		<h2 id="result"></h2>
-	</div>
+  var lettres = "";
 
-	<script>
-		
+  for (var i = lettre.length - 1; i >= 0; i--) {
 
-function strReverse(str) {
-
-  return str.split("").reverse().join("");
+      lettres += lettre[i];
+  }
+  chaîne de retour ;
 }
-
-
-
-console.log(strReverse("WayToLearnX"));
-console.log(strReverse("salut"));
-
-
-	</script>
-
-</body>
-</html>
+console.log(inversement('Gaël Desbrousses'));
