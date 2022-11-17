@@ -1,17 +1,12 @@
-fonction somme(n : entier) : entier
-  Début
-      Si n = 0 alors
-          Retourne 0
-      Sinon
-          Retourne n + somme ( n - 1 )
-        fin Si
-  Fin 
-Variable
-    n : entier
+function début(a){
 
-Début
-    Ecrire("Veuillez entrer un nombre positif : ")
-    Lire(n)
-    Ecrire("La somme des entier de 1 à " , n , "est : " , somme(n) )
+    var calc = 0
 
-Fin
+    for(var i = 1; i <= a ; i++){
+        calc= calc + i;
+    }
+
+    return calc;
+}
+
+console.log(début(5));
