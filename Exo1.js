@@ -1,4 +1,4 @@
-function inversement(caractere) {
+function inversement(lettre) {
 
   var lettres = "";
 
@@ -6,6 +6,6 @@ function inversement(caractere) {
 
       lettres += lettre[i];
   }
-  chaîne de retour ;
+  return lettres ;
 }
 console.log(inversement('Gaël Desbrousses'));
