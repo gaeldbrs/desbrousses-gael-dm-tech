@@ -1,17 +1,17 @@
-Écrire un algorithme qui demande un nombre de départ, et qui
-calcule la somme des entiers jusqu’à ce nombre. Par exemple, si
-l’on entre 5, le programme doit calculer : 1 + 2 + 3 + 4 + 5 = 15 NB
-: on souhaite afficher uniquement le résultat, pas la décomposition
-du calcul.
+fonction somme(n : entier) : entier
+  Début
+      Si n = 0 alors
+          Retourne 0
+      Sinon
+          Retourne n + somme ( n - 1 )
+        fin Si
+  Fin 
+Variable
+    n : entier
 
+Début
+    Ecrire("Veuillez entrer un nombre positif : ")
+    Lire(n)
+    Ecrire("La somme des entier de 1 à " , n , "est : " , somme(n) )
 
-Variables N, i, Som en Entier
-Debut
-Ecrire "Entrez un nombre : "
-Lire N
-Som ← 0
-Pour i ← 1 à N
-  Som ← Som + i
-i Suivant
-Ecrire "La somme est : ", Som
 Fin
